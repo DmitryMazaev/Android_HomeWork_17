@@ -33,7 +33,6 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.recyclerView.adapter = photoAdapter
         viewModel.photoes.onEach {
             photoAdapter.setData(it)
