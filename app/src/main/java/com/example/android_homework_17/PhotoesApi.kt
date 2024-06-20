@@ -7,11 +7,11 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-const val BASE_URL = "https://api.nasa.gov"
+const val BASE_URL = "https://api.nasa.gov/mars-photos"
 const val API_KEY = "ButRbXOR1RaTbzWfjqEnbEdRxszsIxnpz8CF6Mgz"
 interface PhotoesApi {
-    @GET("/mars-photos/api/v1/rovers/curiosity/photos?sol=1000")
-    suspend fun getPhotoes (@Query("api_key") api_key: String = API_KEY): Photoes
+    @GET("/api/v1/rovers/curiosity/photos")
+    suspend fun getPhotoes (@Query("sol") sol: Int = 1000, @Query("api_key") api_key: String = API_KEY): Photoes
 }
 
 object RetrofitInstance {

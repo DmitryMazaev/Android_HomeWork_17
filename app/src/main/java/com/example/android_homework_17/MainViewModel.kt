@@ -20,15 +20,17 @@ class MainViewModel private constructor(
 
     }
 
-    private fun loadPhotoes() {
+    fun loadPhotoes() {
         viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
                 repository.getData()
+                //
             }.fold(
                 onSuccess = {_photoes.value = it },
                 onFailure = { Log.d("MainViewModel", it.message ?: "")}
             )
         }
+        Log.e("*******", "loadPhoto")
     }
 
 
