@@ -12,8 +12,10 @@ class PhotoAdapter: RecyclerView.Adapter<PhotoViewHolder>() {
 
     private var data:List<Photo> = emptyList()
     fun setData(data:List<Photo>) {
+        Log.e("******", "setData")
         this.data = data
         notifyDataSetChanged()
+
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder {
         return PhotoViewHolder(

@@ -30,7 +30,6 @@ class MainViewModel private constructor(
                 onFailure = { Log.d("MainViewModel", it.message ?: "")}
             )
         }
-        Log.e("*******", "loadPhoto")
     }
 
 
